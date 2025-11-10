@@ -75,7 +75,7 @@ const AddJob = () => {
         try {
             const response = await axios.post(
                 // backend mounts the router at "/api/v1/Jobs" (capital J), use same casing to avoid surprises
-                "http://localhost:3000/api/v1/Jobs",
+                "https://webbackend-nu.vercel.app/api/v1/Jobs",
                 newJob,
                 {
                     withCredentials: true,

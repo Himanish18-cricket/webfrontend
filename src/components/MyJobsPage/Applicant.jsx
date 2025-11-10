@@ -15,7 +15,7 @@ const Applicant = () => {
         queryKey: ["applicant-jobs"],
         queryFn: async () => {
             const response = await axios.get(
-                `http://localhost:3000/api/v1/application/applicant-jobs`,
+                `https://webbackend-nu.vercel.app/api/v1/application/applicant-jobs`,
                 { withCredentials: true }
             );
             return response?.data?.result;

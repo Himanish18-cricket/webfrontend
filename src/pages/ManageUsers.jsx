@@ -20,7 +20,7 @@ const ManageUsers = () => {
     } = useQuery({
         queryKey: ["users"],
         queryFn: () =>
-            getAllHandler(`http://localhost:3000/api/v1/users`),
+            getAllHandler(`https://webbackend-nu.vercel.app/api/v1/users`),
     });
 
     const updateUserModal = (id, role) => {
@@ -43,7 +43,7 @@ const ManageUsers = () => {
         const updateUser = { id, role };
         try {
             const response = await axios.patch(
-                `http://localhost:3000/api/v1/admin/update-role`,
+                `https://webbackend-nu.vercel.app/api/v1/admin/update-role`,
                 updateUser,
                 { withCredentials: true }
             );
@@ -82,7 +82,7 @@ const ManageUsers = () => {
     const deleteUser = async (id) => {
         try {
             await axios.delete(
-                `http://localhost:3000/api/v1/users/${id}`,
+                `https://webbackend-nu.vercel.app/api/v1/users/${id}`,
                 { withCredentials: true }
             );
             refetch();
